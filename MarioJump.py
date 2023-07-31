@@ -1,5 +1,13 @@
 #TODO LIST:
 #Make Mario move left & right
+#Spawn Mushrooms
+#Make Mushrooms move
+#Add gravity for Mario
+#Make Mario bounce on the mushrooms
+#Spawn coins
+#Make coins move
+#Make score increase when touching coins
+
 
 
 # Import and initialize the pygame library
@@ -73,7 +81,7 @@ class Mushroom(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.image = pygame.image.load(r'./Assets/mushroom.png')
         # Make random size
-        size = 0
+        size = 50
         self.image = pygame.transform.scale(self.image,(size,size))
         self.rect = self.image.get_rect()
         # Initialize starting positions
@@ -88,8 +96,8 @@ class Coin(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
         self.image = pygame.image.load(r'./Assets/coin.png')
-        #size = random.randint(100, 250)
-        self.image = pygame.transform.scale(self.image,(50, 50))
+        size = 50
+        self.image = pygame.transform.scale(self.image,(size, size))
         self.rect = self.image.get_rect()
         # Set starting position
         # Set random speed
